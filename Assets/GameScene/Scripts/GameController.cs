@@ -66,7 +66,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	void LoadAgoraKit () {
-		mRtcEngine = RtcEngineForGaming.getEngine (ApplicationModal.AppId);
+		mRtcEngine = IRtcEngineForGaming.GetEngine (ApplicationModal.AppId);
 
 		mRtcEngine.SetLogFilter (LOG_FILTER.DEBUG);
 		string rtcLogFile = LocalLogFilePath ();

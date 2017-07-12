@@ -50,3 +50,37 @@ static public string AppId = "YOUR APP ID";
 ## 代码许可
 
 The MIT License (MIT).
+
+Before building, you need to
+1. Unzip AMG Voice Unity SDK. If you dont have one, please contact sales@agora.io
+
+[c# interface files]
+Copy c# scripts from libs/Scripts/*.cs to Assets/AgoraGamingSDK/
+  AgoraGamingRtcEngine.cs    Engine c# wrapper
+  AudioEffectManager.cs      Audio effect manager, used to fine tune audio effects
+  videoSurface.cs            Video surface, used to render video (local and remote)
+
+[iOS support]
+Copy files from libs/Plugins/iOS/* to Assets/Plugins/iOS/
+  AgoraRtcEngineKit.framework    Core Agora sdk
+  libagoraSdkCWrapper.a          Wrapper library
+
+[Android support]
+Copy files from libs/Plugins/Android/libs/* to Assets/Plugins/Android/libs/
+  agora-unity-wrapper.jar
+  libs/agora-rtc-sdk.jar
+  armeabi-v7a/
+  x86/
+
+2. Edit AppId in Assets/MainScene/Scripts/ApplicationModel.cs. You can get your App ID at https://dashboard.agora.io
+
+3. Ensure that your environment meet the following requirements:
+* Unity 5.5 or later
+* Xcode 8.0 or later
+* 2 or more real iOS devices (9.0 or later) with audio functions
+
+4. For Android, appropriate permissions are requested. There's a example AndroidManifest.xml in the package
+
+5. For iOS, add VideoTool.frameworks and resolv.tbd to your project
+
+6. For video support, disable Auto Graphics API and choose OpenGLES2
