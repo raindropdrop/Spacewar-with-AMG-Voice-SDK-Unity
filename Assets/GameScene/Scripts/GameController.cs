@@ -99,6 +99,7 @@ public class GameController : MonoBehaviour {
 	}
 
 	void EngineOnUserJoined (uint uid, int elapsed) {
+		Debug.Log ("EngineOnUserJoined: OnUserJoined called");
 		string userJoinedMessage = string.Format ("onUserJoined callback uid {0} {1}", uid, elapsed);
 		Debug.Log (userJoinedMessage);
 
